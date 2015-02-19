@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+#include <ostream>
+#define N 16; 
+
+using namespace std;
+
+
+int main()
+{
+   int num;
+   cout<<"Ingrese el numero"<<endl;
+   cin>>num;
+
+   cout<<"El valor hexadecimal es :"<<endl;
+
+   cout<<hexadecimal(num);
+
+
+    return 0;
+}
+
+void hexadecimal(int num)
+{
+    if(num==0)
+        return ;
+    else
+    {
+        hexadecimal(num/16);
+        cout<<("%c",letra(num%16)); //imprime el char
+    }
+}
+
+char letra(int caracter)
+{
+    char letras[]="ABCDEF";
+    if(caracter>=10) //si el valor es mayor a 10 
+        return letras[caracter-10];
+    else
+        return caracter+48;
+}
