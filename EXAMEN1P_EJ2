@@ -1,0 +1,204 @@
+#include <iostream>
+#include <time.h>
+#include "LinkedList.h"
+#include <string>
+
+using namespace std;
+
+srand((unsigned int)time(NULL));
+
+template <typename T>
+void insertionSort(LinkedList<T> numbers, int size)
+{
+	int i, j;
+	T index;
+	for (i=1; i < size; i++)
+    {
+		index = numbers[i].value;
+		j = i-1;
+		while (j >= 0 && numbers[j].value < index)
+		{
+			numbers[j+1].value = numbers[j].value;
+			j--;
+		}
+		numbers[j+1].value = index;
+	} 
+}
+
+int main(){
+
+int ventas,size,index, cont, total, i1, i2;
+string nombre, apellido, ife, vehiculo, marca, 	cilindrada,nuevo, n1,n2;
+
+cout<<"Ingrese el numero de ventas"<<endl;
+cin>>ventas; 
+
+int size=ventas;
+
+LinkedList<int> precio; //linked list que almacena y genera los precios
+for (int i = 0; i < ventas; ++i)
+	{
+		int valor=0;
+		cout<<"Valor del vehiculo :"<<endl;
+		cin>>valor;
+		precio.insertLast(valor);
+	}
+
+}
+LinkedList<string> names;
+LinkedList<string> lastNames;
+LinkedList<string> id;
+LinkedList<string> vehicle;
+LinkedList<string> brand;
+LinkedList<string> truck;
+LinkedList<string> cilinders;
+
+LinkedList<int> codigo;
+for (int i = 0; i < ventas; ++i)
+	{
+		int _codigo=0;
+		cout<<"Codigo del vehiculo :"<<endl;
+		cin>>_codigo;
+		codigo.insertLast(_codigo);
+	}
+
+} 
+
+LinkedList<int> kilometros;
+for (int i = 0; i < ventas; ++i)
+	{
+		int km=0;
+		cout<<"Kilometraje del vehiculo :"<<endl;
+		cin>>km;
+		kilometros.insertLast(km);
+	}
+
+} 
+
+	insertionSort<int>(monto, size); //Ordena descendentemente por el monto
+
+
+
+
+
+
+    string nombres[5] = {"Mauricio","Alex","Ramon","Daniela","Maria"}; //REGISTRO DE USUARIOS Y DE VEHICULOS
+    string apellidos[5] = {"Garcia", "Perez", "Short", "Lara", "Jimenez"};
+    string ifes[5] = {"Q7Q5R","P3K2H","V2P7B","N1B1K","P0P7S","X1Z9R"};
+   
+    string vehiculos[3] = {"Coche","Camioneta","Moto"};
+    
+    string marcas[5]={"Suzuki","Nissan","Mercedez","Jaguar","BMW"};
+    
+    string camionetas[4]={"4x2","4x4","AWD","4WD"};
+    string cilindradas[2]{"150cc", "250cc"};
+
+
+
+	for (int i = 0; i < ventas; ++i)
+	{
+		nombre = names[rand() % (5-1)] ;
+		names.insertLast(nombre);
+
+		apellido = lastNames[rand() % (5 - 1)];
+		lastNames.insertLast(apellido);
+        
+        ife = id [rand() % (5 - 1)];
+        id.insertLast(ife);
+
+        
+        vehiculo = vehicle[rand() % (3 - 1)];
+        vehicle.insertLast(vehiculo);
+        
+        marca = brand[rand() % (5 - 1)];
+        brand.insertLast(marca);
+        
+        camioneta= truck[rand() % (4 - 1)];
+        truck.insertLast(camioneta);
+        
+        cilindro = cilinders[rand() % (2 - 1)];
+        cilinders.insertLast(cilindro);
+
+		
+       }
+
+
+    //Revisa si hay repeticiones
+    for(int j=0; j<names.getSize();++j){
+        for(int i=j+1; i<names.getSize(); ++i){
+           
+            
+            if(names[j].value==names[i].value){
+                
+                index=i;
+                
+                newName=names[i].value;
+                
+                cont++;
+            }
+        }
+        
+    }
+
+cout<<"USUARIO REPETIDO: "<<newName;    
+cout<<"REPETICIONES"<<cont<<endl;
+
+
+
+for (int i = 0; i < ventas; ++i)
+     {
+         if(names[i].value==newName){
+          
+             
+             total += precio[i].value;
+             i1 = i;
+             ++i;
+             
+         }
+         
+         i2= i1;
+         
+        
+         cout << "Precio: "<< precio[i].value << endl;
+         cout << "Codigo: "<<codigo[i].value << endl;
+         cout << "kilometraje: "<<kilometros[i].value << endl;
+         cout << "Nombre: "<<names[i].value << endl;
+         cout << "Apellido: "<<lastNames[i].value << endl;
+         cout << "IFE: "<<id[i].value << endl;
+         cout << "Vehiculo: "<<vehicle[i].value << endl;
+        
+
+        //Revisa el tipo de vehiculo
+
+
+         if(vehicle[i].value=="Camioneta"){
+             cout << "Traccion: "<<truck[i].value << endl;
+         }
+         else{ 
+
+         	if(vehicle[i].value=="Moto")
+         {
+           cout << "Cilindrada: "<<cilinders[i].value << endl;
+         }
+          }
+         cout << "Marca: "<<brand[i].value << endl;
+         
+        
+        
+   	
+         
+         
+     }
+
+    cout<< " El monto total del usuario "<<newName<<" es :" <<acum<<endl;
+    
+
+    
+
+
+
+return 0;
+}
+
+
+    
