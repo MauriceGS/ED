@@ -1,0 +1,28 @@
+
+
+function convierte(int decimal){
+
+
+if (decimal>0){
+	
+		while(decimal>0){
+	
+			conversion=decimal%2;
+			decimal= decimal/2;
+
+			pila.push(conversion);
+
+						}
+
+		while(pila.getSize()>0){
+		cout << pila.pop();
+
+								}				
+
+
+
+
+
+
+}
+}
