@@ -1,0 +1,50 @@
+#include "ListaEnlazada.h"
+
+int main(int argc, const char * argv[])
+{
+
+    Nodo<int> * n = new Nodo<int>(5);
+    Nodo<int> * n1 = new Nodo<int>(9);
+    Nodo<int> * n2 = new Nodo<int>(20);
+    Nodo<int> * n3 = new Nodo<int>(1);
+    Nodo<int> * n4 = new Nodo<int>(20);
+   
+    ListaEnlazada<int> * listaR = new ListaEnlazada<int>();
+    ListaEnlazada<int> * listaL = new ListaEnlazada<int>();
+
+    
+    listaR->insertLast(n);
+    listaR->insertLast(n1);
+    listaR->insertLast(n2);
+    listaR->insertLast(n3);
+    listaR->insertLast(n4);
+    
+    cout << (*listaR);
+    
+    Nodo<int> * borrar = lista->removeAt();
+    if (borrar) {
+        delete borrar;
+    }
+
+    for(int i=1, i<listaR->getSize(); i++){
+        Nodo<int> *aux=listaR->getElementAt(i);
+        
+        if(aux==listaR->getElementAt(i)){
+        listaL->insertLast(aux);
+        aux=listaR->getElementAt(i+1);
+
+        }
+
+        else
+
+        aux=listaR->getElementAt(i+1);
+
+
+
+    }
+    
+    cout<<(*listaL);
+    
+    
+    return 0;
+}
