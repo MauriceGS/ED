@@ -1,15 +1,16 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
-#include <string>
-#include <ostream>
+#pragma once
+#include <string.h>
+#include <iostream>
 
 using namespace std;
 
 
-class Persona(){
+class Persona{
 
-  private
+  private:
   string nombre, apellido;
   bool fallecimiento;
   int fecha,edad;
